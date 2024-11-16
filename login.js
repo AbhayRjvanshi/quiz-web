@@ -1,10 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-#define MAX_USERS 100
-#define MAX_LEN 50
-
 // Validate user login
 function login() {
     const username = document.getElementById("username").value;
