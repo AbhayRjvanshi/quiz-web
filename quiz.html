@@ -4,32 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="js/quiz.js" defer></script>
 </head>
-<body>
-    <div class="form-page-container">
-        <h2>Take the Quiz</h2>
-        <form action="quiz.cgi" method="post">
-            <div class="question">
-                <p>1. What is the capital of France?</p>
-                <input type="radio" id="q1a1" name="q1" value="Paris" required>
-                <label for="q1a1">Paris</label><br>
-                <input type="radio" id="q1a2" name="q1" value="Rome">
-                <label for="q1a2">Rome</label><br>
-                <input type="radio" id="q1a3" name="q1" value="Berlin">
-                <label for="q1a3">Berlin</label>
-            </div>
-            <div class="question">
-                <p>2. What is 5 + 3?</p>
-                <input type="radio" id="q2a1" name="q2" value="8" required>
-                <label for="q2a1">8</label><br>
-                <input type="radio" id="q2a2" name="q2" value="10">
-                <label for="q2a2">10</label><br>
-                <input type="radio" id="q2a3" name="q2" value="6">
-                <label for="q2a3">6</label>
-            </div>
-            <button type="submit">Submit Quiz</button>
-        </form>
-    </div>
+<body onload="renderQuiz()">
+    <h1>Quiz</h1>
+    <form id="quiz-container" onsubmit="submitQuiz(); return false;"></form>
+    <button type="submit">Submit Quiz</button>
 </body>
 </html>
+
