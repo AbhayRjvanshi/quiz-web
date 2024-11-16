@@ -1,11 +1,9 @@
-// Quiz questions
 const quizQuestions = [
     { question: "What is the capital of France?", options: ["Paris", "London", "Berlin", "Madrid"], answer: "Paris" },
     { question: "What is 2 + 2?", options: ["3", "4", "5", "6"], answer: "4" },
     { question: "Who wrote 'Hamlet'?", options: ["Shakespeare", "Homer", "Dante", "Chaucer"], answer: "Shakespeare" }
 ];
 
-// Render quiz questions
 function renderQuiz() {
     const quizContainer = document.getElementById("quiz-container");
     quizQuestions.forEach((q, index) => {
@@ -20,7 +18,6 @@ function renderQuiz() {
     });
 }
 
-// Handle quiz submission
 function submitQuiz() {
     let score = 0;
     quizQuestions.forEach((q, index) => {
@@ -31,12 +28,10 @@ function submitQuiz() {
     });
 
     const username = sessionStorage.getItem("loggedInUser");
-    if (username) {
-        const results = JSON.parse(localStorage.getItem("quizResults")) || {};
-        results[username] = score;
-        localStorage.setItem("quizResults", JSON.stringify(results));
-    }
+    const results = JSON.parse(localStorage.getItem("quizResults")) || {};
+    results[username] = score;
+    localStorage.setItem("quizResults", JSON.stringify(results));
 
     alert(`Your Score: ${score}/${quizQuestions.length}`);
-    window.location.href = "index.html";
+    window.location.href = "results.html";
 }
