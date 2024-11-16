@@ -17,10 +17,22 @@
         <button type="submit">Login</button>
     </form>
     <script>
-        function signup() {
-            // Perform any signup validation or action here (e.g., storing the data)
-            // After successful signup, redirect to the quiz page
-            window.location.href = "quiz.html"; // Redirect to the quiz page
+        // JavaScript to handle login and redirection
+        function login() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Validate the login credentials (example, this should be replaced with proper validation logic)
+            if (username === "user" && password === "password123") {
+                // If login is successful, store the username in sessionStorage (or other suitable storage)
+                sessionStorage.setItem("loggedInUser", username);
+
+                // Redirect to the quiz page after successful login
+                window.location.href = "quiz.html"; // Redirect to the quiz page
+            } else {
+                // Show an error message if credentials are incorrect
+                alert("Invalid username or password. Please try again.");
+            }
         }
     </script>
 </body>
